@@ -137,4 +137,4 @@ def describe_computer(computer: dict):
     print(computer)
 
 
-describe_computer({"Type": "Laptop", "Brand": "Lenovo", "Price": 500})
+# describe_computer({"Type": "Laptop", "Brand": "Lenovo", "Price": 500})
