@@ -123,8 +123,10 @@ def remove_duplicate_my_way(items: list):
 
 def describe_computer(computer: dict):
     key_list = ["Type", "Brand", "Price", "OS"]
+    if key_list[-1] not in computer:
+        computer[key_list[-1]] = "Linux"
     try:
-        print(f"You have a {computer[key_list[0]]} from {computer[key_list[1]]} that costs {computer[key_list[2]]} uses {computer[key_list[3]]}")
+        print(f"You have a {computer[key_list[0]]} from {computer[key_list[1]]} that costs {computer[key_list[2]]}")
     except KeyError:
         for key in key_list:
             try:
@@ -132,5 +134,7 @@ def describe_computer(computer: dict):
             except KeyError:
                 print(f"Unknown {key.lower()}, no {key} given.")
 
+    print(computer)
 
-# describe_computer({"Type": "Laptop", "Brand": "Lenovo", "Price": 500, "OS": "Linux"})
+
+describe_computer({"Type": "Laptop", "Brand": "Lenovo", "Price": 500})
